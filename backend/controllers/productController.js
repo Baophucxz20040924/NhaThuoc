@@ -16,9 +16,7 @@ exports.getProducts = async (req, res) => {
     }
 };
 
-// =============================
-// 🧾 Lấy tất cả sản phẩm cho admin (GET /admin/products)
-// =============================
+
 exports.getAdminProducts = async (req, res) => {
     try {
         const products = await Product.find();
@@ -31,9 +29,7 @@ exports.getAdminProducts = async (req, res) => {
     }
 };
 
-// =============================
-// ➕ Thêm sản phẩm mới (POST /admin/product/new)
-// =============================
+
 exports.newProduct = async (req, res) => {
     try {
         const product = await Product.create(req.body);
@@ -47,9 +43,7 @@ exports.newProduct = async (req, res) => {
     }
 };
 
-// =============================
-// 🔍 Lấy 1 sản phẩm theo ID (GET /product/:id)
-// =============================
+
 exports.getSingleProduct = async (req, res) => {
     try {
         const product = await Product.findById(req.params.id);
@@ -69,9 +63,7 @@ exports.getSingleProduct = async (req, res) => {
     }
 };
 
-// =============================
-// ✏️ Cập nhật sản phẩm (PUT /admin/product/:id)
-// =============================
+
 exports.updateProduct = async (req, res) => {
     try {
         let product = await Product.findById(req.params.id);
@@ -99,9 +91,7 @@ exports.updateProduct = async (req, res) => {
     }
 };
 
-// =============================
-// ❌ Xoá sản phẩm (DELETE /admin/product/:id)
-// =============================
+
 exports.deleteProduct = async (req, res) => {
     try {
         const product = await Product.findById(req.params.id);
@@ -124,24 +114,18 @@ exports.deleteProduct = async (req, res) => {
     }
 };
 
-// =============================
-// 💬 Tạo đánh giá sản phẩm (PUT /review)
-// =============================
+
 exports.createProductReview = async (req, res) => {
-    // Chưa dùng đến → để chống lỗi router, ta trả về tạm thời
+
     res.status(200).json({ success: true, message: 'Tính năng đánh giá chưa được triển khai' });
 };
 
-// =============================
-// 📃 Lấy danh sách đánh giá (GET /reviews)
-// =============================
+
 exports.getProductReviews = async (req, res) => {
     res.status(200).json({ success: true, message: 'Tính năng xem đánh giá chưa được triển khai' });
 };
 
-// =============================
-// 🗑️ Xoá đánh giá (DELETE /reviews)
-// =============================
+
 exports.deleteReview = async (req, res) => {
     res.status(200).json({ success: true, message: 'Tính năng xoá đánh giá chưa được triển khai' });
 };
